@@ -104,7 +104,34 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 
 - more aggressive than Ubuntu
 - but still volatile
+![Re-checking IP addresses on windows and pinged IPV6 messages to another host](obs7-checking-IP-address-on-Windows-&-ping-IPV6-messages)
+![pinged IPV6 messages to another host from windows failed](obs8-IPV6-pinged-messages-failed)
+![Re-checking IP addresses on Ubuntu & forwarded ping IPV6 messages](obs9-IPV6-pinged-messages-on-Ubuntu)
+![Re-checking IP addresses on Kali](obs10-checking-IP-address-on-kali)
+## Observation-3
 
+- **What I observed in my internal LAN IPv6 lab is this:**
+- After restarting a system, the **first ping works successfully.**
+- But after some time, **ping to other hosts stops working.**
+- However, **ping to the same host from itself always works 100%**
+- If I try to ping another host after the first successful ping, it often fails.
+![Ping works successfully after restarting the system](obs11-ping-works-successfully-after-restart)
+![Ping failed](obs12-ping-failed)
+![Ping failed](obs13-ping-failed)
+## Observation-4:
+
+I have observed the continues ping fails. The probable root cause of this issue is due to Window defender firewall.
+As windows work aggressively in Link-Local network but, Window defender firewall blocks the Echo replies. 
+Window defender firewall was disabled but still ping messages failed
+Ping between Kali vs Ubuntu is also not working. So, There may be an another root cause
+![Suspecting window defender firewall blocks the traffic. So, window defender firewall disabled](obs14-window-defender-firewall-disabling)
+![Suspecting window defender firewall blocks the traffic. So, window defender firewall disabled](obs15-window-defender-firewall-disabling)
+![Ping messages forwarding after firewall disabling](obs16-ping-checking-after-firewall-disabling)
+![Ping messages forwarding after firewall disabling](obs17-ping-checking-after-firewall-disabling)
+![Ping messages forwarding after firewall disabling](obs18-ping-checking-after-firewall-disabling)
+![Ping messages forwarding after firewall disabling](obs19-ping-failing)
+![checking neighbor discovery after continues ping fails](obs20-neighbor-discovery-flushing)
+![observing no neighbor](obs21-no-neighbor-showing)
 
 
 
