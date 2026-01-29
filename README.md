@@ -47,6 +47,15 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 ![Windows IP configuration showing APIPA and IPv6](obs1-win-ipconfig.png)
 ![Kali IP a showing Connection up but no ip address](obs2-kali-ipa.png)
 ![Ubuntu IP a showing Connection up but no ip address](obs3-ubuntu-ipa.png)
+### **IPv6 Activation Observation**
+
+- IPv6 multicast traffic was initiated using `ping -6 ff02::1` on Linux.
+- On Kali Linux, multicast required explicit interface scoping (`%eth0`).
+- Initial multicast attempts failed without interface scope.
+- After specifying the interface, ICMPv6 echo replies were received.
+- Neighbor Discovery activity caused Linux systems to display IPv6 link-local addresses in `ip a`.
+![Kali linux doesn't support ping -6 without interface scoping](obs4-ping IPV6 from linux.png)
+
 
 
 
