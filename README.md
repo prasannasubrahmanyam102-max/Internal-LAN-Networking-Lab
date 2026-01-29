@@ -45,6 +45,9 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 - Kali and Ubuntu showed no IPv4 address in `ip a`
 - IPv6 addresses appeared in ICMPv6 echo replies after multicast traffic
 ![Windows IP configuration showing APIPA and IPv6](obs1-win-ipconfig.png)
+![Kali IP a showing Connection up but no ip address](obs2-kali-ipa.png)
+![Ubuntu IP a showing Connection up but no ip address](obs3-ubuntu-ipa.png)
+
 
 
 
