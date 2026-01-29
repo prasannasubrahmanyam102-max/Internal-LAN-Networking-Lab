@@ -44,7 +44,7 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 - Windows IPv6 link-local address observed: `fe80::/64`
 - Kali and Ubuntu showed no IPv4 address in `ip a`
 - IPv6 addresses appeared in ICMPv6 echo replies after multicast traffic
-<img width="951" height="912" alt="obs1-win-ipconfig png" src="https://github.com/user-attachments/assets/47cab605-7c92-4660-8562-f802a119a382" />
+![Windows IP configuration showing APIPA and IPv6](obs1-win-ipconfig.png)
 
 
 
