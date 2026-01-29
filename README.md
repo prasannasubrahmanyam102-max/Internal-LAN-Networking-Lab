@@ -54,8 +54,56 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 - Initial multicast attempts failed without interface scope.
 - After specifying the interface, ICMPv6 echo replies were received.
 - Neighbor Discovery activity caused Linux systems to display IPv6 link-local addresses in `ip a`.
+![Kali linux doesn't support ping -6 messages without interface scoping](obs4-ping-IPV6-from-linux)
+![Kali linux IPV6 ping messages were successful after using interface](obs5-ping-IPV6-from-linux-successful)
+![Checking IP a on Ubuntu for re-confirmation of IPV6 address in link-local network](obs6-checking-IP-address-on-Ubuntu)
+### **Impact**
 
+- IPv6 communication occurred even when IPv4 connectivity was unavailable.
+- Hosts were able to discover and communicate with each other without DNS, DHCP, or a gateway.
+- Linux systems participated in IPv6 traffic before showing visible IP addresses in standard interface output.
+- IPv6 multicast enables internal host discovery by default.
+- Security monitoring focused only on IPv4 traffic may miss active IPv6-based communication.
+## Observation-2
 
+- All host have stable IPV6 address
+- Send Ping commands from one host to other using IPV6 address
+- In an isolated internal LAN without DHCPv6, DNS, or router advertisements, all hosts rely on IPv6 link-local addresses (`fe80::/64`) for local communication.
+- IPv6 link-local connectivity depends entirely on Neighbor Discovery Protocol (NDP), which maintains a short-lived neighbor cache. In virtualized environments, this cache is frequently invalidated due to interface resets, VM state changes, or OS network stack behavior.
+- As a result, ICMPv6 echo requests may succeed intermittently and later fail without configuration changes. This behavior is expected and does not indicate network failure, but rather highlights the instability of relying solely on link-local IPv6 for persistent communication.
+
+**Commands used in Lab**
+
+- On Ubuntu, Ping IPV6 address%interface -c 3
+- On kali, Ping -c 3 IPV6 address%interface
+- On windows Ping IPV6 address%Idx -n 3
+- For getting Index (Idx) using netsh interface IPV6 show interfaces
+- On Linux, To fresh temporary IPV6 manually, ip -6 neigh show or ip -6 neigh flush all
+- On ubuntu , to reset interface, sudo ip link set interface down
+- sudo ip link set interface up
+- On kali, sudo ip interface down
+- sudo ip interface up
+
+## Evidence
+
+- Sometimes, IPV6 address is not shown visibly and Neighbor solicitation, Neighbor Advertisement are mandatory in link-local network. However, Ping reply doesn’t work for sometimes.
+- IPV6 Echo replies are not stable.
+
+**Ubuntu:**
+
+- does not “hold” link-local aggressively
+- may not display it until traffic triggers NDP
+- may remove it after cache timeout
+
+**Windows:**
+
+- aggressively keeps fe80::
+- responds locally even when others drop cache
+
+**Kali:**
+
+- more aggressive than Ubuntu
+- but still volatile
 
 
 
