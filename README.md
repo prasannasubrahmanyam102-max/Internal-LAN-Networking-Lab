@@ -54,7 +54,7 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 - Initial multicast attempts failed without interface scope.
 - After specifying the interface, ICMPv6 echo replies were received.
 - Neighbor Discovery activity caused Linux systems to display IPv6 link-local addresses in `ip a`.
-![Kali linux doesn't support ping -6 without interface scoping](obs4-ping IPV6 from linux.png)
+
 
 
 
