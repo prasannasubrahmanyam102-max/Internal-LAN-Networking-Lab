@@ -13,14 +13,14 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 
 ## Lab Setup:
 
-- Three Operating Systems has been installed on Virtual box.
+- Three Operating Systems were installed on Virtual box.
 - Kali Linux, Windows 10 and Ubuntu
------------------------------------
 |Host	          |Operating System	|
+-----------------------------------
 |Kali SOC=	    |Kali Linux	      |
 |Win10-victim	  |Windows 10	      |
 |Ubuntu-SOC-lab	|Ubuntu           |
------------------------------------
+
 ## Network Configuration:
 
 - Network Type: Internal SOC Lab (Internal Only)
@@ -31,7 +31,7 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 ## Initial Observation
 
 - No DHCP server was available in the internal network.
-- Windows self assigned an IPV4 link-local address (169.254.55.204) - APIPA and windows also configured an IPV6 link-local address as shown below.
+- Windows self assigned an IPV4 link-local address (169.254.55.204) - APIPA and Windows also configured an IPV6 link-local address as shown below.
 - Windows implements IPv4 Link-Local Addressing by default to preserve limited connectivity when DHCP is unavailable. Therefore, windows self assigned IPV4 address (APIPA) and an IPV6 address
 - Kali Linux and Ubuntu did not auto-assign IPv4 addresses by design.
 - Initially, Linux systems did not display visible IPv6 addresses despite interfaces being UP.
@@ -44,3 +44,8 @@ Hands-on lab exploring internal LAN communication using IPv4/IPv6, Neighbor Disc
 - Windows IPv6 link-local address observed: `fe80::/64`
 - Kali and Ubuntu showed no IPv4 address in `ip a`
 - IPv6 addresses appeared in ICMPv6 echo replies after multicast traffic
+<img width="951" height="912" alt="obs1-win-ipconfig png" src="https://github.com/user-attachments/assets/47cab605-7c92-4660-8562-f802a119a382" />
+
+
+
+  
