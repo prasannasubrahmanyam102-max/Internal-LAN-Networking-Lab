@@ -161,9 +161,11 @@ After providing the static IP addresses, ping messages are successful which mean
 In Ubuntu, there are two networking files. So, I moved one of the networking file to backup folder without disturbing or deleting. I saved network configuration in netplan file and changed permission as that file is open to everyone.
 ![observed warning messages on ubuntu during ip re-assigning in networkplan-directory](obs38-observed-warning-messages-due-to-open-permissions-of-network-manager-&-networkplan.png)
 ![found two networking files on ubuntu, moved one networking file to backup](obs39-moved-networking-file-to-backup.png)
-![successfully moved networking files](obs40-moved-netplan-to-backup-directory.png)
+![found two networking files on ubuntu, moved one networking file to backup](obs39a-moved-networking-file-01-static.yaml-to-backup.png)
+![successfully moved networking files](obs40-checking-available-networking-files.png)
 ![changed permission to netplan](obs41-changed-netplan-permissions.png)
 ![moved netplan backto networking directory as systemd networkd is not running and changed permissions to netplan and finally, re-assigned ip addresses](obs42-relocate-netplan-to-networking-directory.png)
+![Reassigned ip addressess, changed permissions and generated netplan](obs42a-netplan-generated.png)
 ![ping worked successfully and assigned ip addressess were saved in networking directory and static ip were permanent till changed later](obs43-ping-worked-successfully-on-ubuntu.png)
 ![ping worked successfully on kali](obs44-ping-worked-successfully-on-kali.png)
 ![ping worked successfully on kali](obs45-ping-worked-successfully-on-kali.png)  
